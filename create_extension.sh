@@ -1,3 +1,3 @@
-gosu postgres postgres --single -E <<-EOSQL
+gosu postgres postgres --single template1 -E <<-EOSQL
 	CREATE EXTENSION hstore;
 EOSQL
