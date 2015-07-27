@@ -3,9 +3,9 @@
 #
 # Running CREATE EXTENSION in both template1 and postgres can lead to
 # the extensions having different eid's.
-gosu postgres postgres --single template1 -E <<-EOSQL
-	CREATE EXTENSION hstore;
-	DROP DATABASE postgres;
-	CREATE DATABASE postgres TEMPLATE template1;
+gosu postgres psql --dbname template1 <<EOSQL
+    CREATE EXTENSION hstore;
+    DROP DATABASE postgres;
+    CREATE DATABASE postgres TEMPLATE template1;
 EOSQL
 
