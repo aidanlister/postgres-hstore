@@ -5,7 +5,7 @@
 # the extensions having different eid's.
 gosu postgres psql --dbname template1 <<EOSQL
     CREATE EXTENSION hstore;
-    DROP DATABASE postgres;
-    CREATE DATABASE postgres TEMPLATE template1;
+    DROP DATABASE $POSTGRES_USER;
+    CREATE DATABASE $POSTGRES_USER TEMPLATE template1;
 EOSQL
 
